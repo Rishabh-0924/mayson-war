@@ -1,3 +1,5 @@
+export const runtime = "nodejs"
+
 import { type NextRequest, NextResponse } from "next/server"
 import { getWarrantyRecordsCollection } from "@/lib/database"
 import { requireAuth } from "@/lib/auth"

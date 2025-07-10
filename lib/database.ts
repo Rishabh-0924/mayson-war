@@ -1,6 +1,8 @@
+export const runtime = "nodejs"
+
 import { MongoClient, type Db, type Collection } from "mongodb"
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017"
+const MONGODB_URI = process.env.MONGODB_URI!
 const DB_NAME = "mayson_warranty"
 
 let cachedClient: MongoClient | null = null

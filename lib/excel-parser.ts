@@ -1,3 +1,5 @@
+export const runtime = "nodejs"
+
 import * as XLSX from "xlsx"
 
 export interface ExcelOrderData {

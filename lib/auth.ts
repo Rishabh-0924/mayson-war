@@ -1,3 +1,5 @@
+export const runtime = "nodejs"
+
 import jwt from "jsonwebtoken"
 import type { NextRequest } from "next/server"
 
