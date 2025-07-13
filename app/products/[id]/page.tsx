@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import {
@@ -20,10 +20,11 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useInView } from "framer-motion"
 
 const productData = {
   "vacuum-sealer": {
-    name: "Vacuum Sealer Pro",
+    name: "3-in-1 Vacuum Sealer",
     price: "$89.99",
     originalPrice: "$119.99",
     images: [
@@ -32,7 +33,7 @@ const productData = {
       "/placeholder.svg?height=500&width=700",
       "/placeholder.svg?height=500&width=700",
     ],
-    rating: 4.8,
+    rating: 4.5,
     reviews: 1247,
     brand: "Mayson",
     model: "VS-Pro-2024",
@@ -158,6 +159,8 @@ export default function ProductDetailPage() {
   const [selectedImage, setSelectedImage] = useState(0)
   const [isImageZoomed, setIsImageZoomed] = useState(false)
   const [activeTab, setActiveTab] = useState("specifications")
+  const ratingRef = useRef(null)
+  const isInView = useInView(ratingRef, { once: true, margin: "-100px" })
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -199,7 +202,7 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Header */}
-      <header className="bg-black shadow-2xl backdrop-blur-sm">
+      <header className="sticky top-0 z-50 bg-black shadow-2xl backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <Link
@@ -316,20 +319,36 @@ export default function ProductDetailPage() {
                 <h1 className="text-4xl font-bold text-gray-900">{product.name}</h1>
 
                 {/* Rating */}
-                <div className="flex items-center space-x-4">
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`h-6 w-6 transition-colors duration-300 ${
-                          i < Math.floor(product.rating) ? "text-yellow-400 fill-current" : "text-gray-300"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xl font-semibold text-gray-800">{product.rating}</span>
-                  <span className="text-gray-600">({product.reviews} reviews)</span>
-                </div>
+                <div className="flex items-center space-x-4" ref={ratingRef}>
+        <div className="flex items-center">
+          {[...Array(5)].map((_, i) => {
+            const fillLevel =
+              i < Math.floor(product.rating)
+                ? 100
+                : i === Math.floor(product.rating)
+                ? (product.rating % 1) * 100
+                : 0
+
+            return (
+              <div
+                key={i}
+                className="relative w-5 h-5"
+                style={{ opacity: isInView ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}
+              >
+                <Star className="absolute text-gray-300 h-5 w-5" />
+                <Star
+                  className="absolute text-yellow-400 h-5 w-5"
+                  style={{
+                    clipPath: `inset(0 ${100 - fillLevel}% 0 0)`
+                  }}
+                />
+              </div>
+            )
+          })}
+        </div>
+        <span className="text-xl font-semibold text-gray-800">{product.rating}</span>
+        <span className="text-gray-600">({product.reviews} reviews)</span>
+      </div>
 
                 {/* Price */}
                 <div className="flex items-center space-x-4">
@@ -376,7 +395,7 @@ export default function ProductDetailPage() {
                       "Easy warranty setup process",
                       "Quick claim resolution",
                       "Comprehensive coverage",
-                      "24/7 customer support",
+                      
                     ].map((item, index) => (
                       <div key={index} className="flex items-center text-gray-700">
                         <CheckCircle className="h-5 w-5 mr-3 text-blue-600" />

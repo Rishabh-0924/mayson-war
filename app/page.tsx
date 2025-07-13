@@ -128,7 +128,7 @@ export default function HomePage() {
               <span className="block text-blue-600">With Ease</span>
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-              Protect your product with our comprehensive warranty system. Set up your warranty on day one and claim it
+              Protect your product with our comprehensive warranty system. Set up your warranty and claim it
               when you need support.
             </p>
           </div>
