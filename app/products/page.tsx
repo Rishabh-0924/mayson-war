@@ -7,6 +7,8 @@ import { ArrowLeft, Star, Shield, Package, Award, CheckCircle, Sparkles, Zap, He
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
+
 
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
@@ -114,7 +116,14 @@ export default function ProductsPage() {
             </Link>
             <div className="flex items-center space-x-3">
               <Shield className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold text-white">MAYSON</span>
+              {/* <span className="text-2xl font-bold text-white">MAYSON</span> */}
+              <Image
+    src="/maysonb-logo.png"
+    alt="Mayson Logo"
+    width={120} // adjust width as needed
+    height={40}
+    className="object-contain"
+  />
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link

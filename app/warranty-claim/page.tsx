@@ -11,6 +11,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import Image from "next/image"
+
 
 interface WarrantyData {
   orderId: string
@@ -156,7 +158,14 @@ export default function WarrantyClaimPage() {
               style={{ cursor: "pointer" }}
             >
               <Shield className="h-8 w-8 text-blue-600" />
-              <h1 className="text-2xl font-bold text-gray-900">MAYSON</h1>
+              {/* <h1 className="text-2xl font-bold text-gray-900">MAYSON</h1> */}
+              <Image
+    src="/maysonb-logo.png"
+    alt="Mayson Logo"
+    width={120} // adjust width as needed
+    height={40}
+    className="object-contain"
+  />
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link
@@ -431,7 +440,13 @@ export default function WarrantyClaimPage() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Shield className="h-6 w-6" />
-                <span className="text-xl font-bold">MAYSON</span>
+                <Image
+    src="/maysonb-logo.png"
+    alt="Mayson Logo"
+    width={120} // adjust width as needed
+    height={40}
+    className="object-contain"
+  />
               </div>
               <p className="text-gray-400">
                 Premium home appliances with reliable warranty support and exceptional customer service.

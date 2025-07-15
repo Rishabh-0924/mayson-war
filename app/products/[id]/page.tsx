@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
+
 import { useParams } from "next/navigation"
 import {
   ArrowLeft,
@@ -214,7 +216,14 @@ export default function ProductDetailPage() {
             </Link>
             <div className="flex items-center space-x-3">
               <Shield className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold text-white">MAYSON</span>
+              {/* <span className="text-2xl font-bold text-white">MAYSON</span> */}
+              <Image
+    src="/maysonb-logo.png"
+    alt="Mayson Logo"
+    width={120} // adjust width as needed
+    height={40}
+    className="object-contain"
+  />
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link

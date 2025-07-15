@@ -5,6 +5,8 @@ import type React from "react"
 import Link from "next/link"
 import { Shield, ArrowRight, FileText, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function HomePage() {
@@ -88,9 +90,31 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 select-none" onClick={handleLogoClick}>
+              {/* <Shield className="h-8 w-8 text-white" /> */}
+              {/* <Image src="/mayson1-logo.png" alt="Mayson Logo" width={40} height={40} className="object-contain" /> */}
+
+              {/* <h1 className="text-2xl font-bold text-white">MAYSON</h1> */}
+
               <Shield className="h-8 w-8 text-white" />
-              <h1 className="text-2xl font-bold text-white">MAYSON</h1>
+  <Image
+    src="/maysonb-logo.png"
+    alt="Mayson Logo"
+    width={120} // adjust width as needed
+    height={40}
+    className="object-contain"
+  />
             </div>
+            {/* <div className="flex items-center space-x-2 select-none" onClick={handleLogoClick}>
+  <Shield className="h-8 w-8 text-white" />
+  <Image
+    src="/mayson1-logo.png"
+    alt="Mayson Logo"
+    width={120} // adjust width as needed
+    height={40}
+    className="object-contain"
+  />
+</div> */}
+
             <nav className="hidden md:flex space-x-8">
               <a
                 href="/products"
@@ -123,9 +147,10 @@ export default function HomePage() {
           <div className="absolute -bottom-8 left-1/3 w-80 h-80 bg-green-100/10 rounded-full animate-pulse" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-12">
               Claim Your Warranty
-              <span className="block text-blue-600">With Ease</span>
+              {/* <span className="block text-blue-600">With Ease</span> */}
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
               Protect your product with our comprehensive warranty system. Set up your warranty and claim it
@@ -163,7 +188,7 @@ export default function HomePage() {
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-center text-gray-600">
                       <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 animate-pulse" />
-                      Enter your Order ID or Phone Number
+                      Enter your Order ID and Phone Number
                     </li>
                     <li className="flex items-center text-gray-600">
                       <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 animate-pulse" />
@@ -234,7 +259,7 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">Why Choose MAYSON?</h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                We're committed to providing premium quality products with exceptional warranty coverage and customer
+                We're committed to providing high quality products with exceptional warranty coverage and customer
                 service.
               </p>
             </div>
@@ -243,7 +268,7 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors duration-300">
                   <Package className="h-8 w-8 text-blue-600" />
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Premium Quality</h4>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">High Quality</h4>
                 <p className="text-gray-600">High-quality materials and advanced technology in every product.</p>
               </div>
               <div className="text-center hover:scale-105 transition-transform duration-300">
@@ -298,7 +323,7 @@ export default function HomePage() {
                   <span className="text-xl font-bold">MAYSON</span>
                 </div>
                 <p className="text-gray-400">
-                  Premium home appliances with reliable warranty support and exceptional customer service.
+                  High quality home appliances with reliable warranty support and exceptional customer service.
                 </p>
               </div>
               <div>

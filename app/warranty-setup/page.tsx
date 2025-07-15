@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
+
 
 interface CustomerData {
   orderId: string
@@ -197,7 +199,15 @@ export default function WarrantySetupPage() {
               <div className="p-2 rounded-xl transition-all duration-300">
                 <Shield className="h-6 w-6 text-white" />
               </div>
-              <h1 className="text-2xl font-bold text-white">MAYSON</h1>
+              {/* <h1 className="text-2xl font-bold text-white">MAYSON</h1> */}
+              <Image
+    src="/maysonb-logo.png"
+    alt="Mayson Logo"
+    width={120} // adjust width as needed
+    height={40}
+    className="object-contain"
+  />
+
             </div>
 
             <nav className="hidden md:flex space-x-8">
@@ -551,9 +561,16 @@ export default function WarrantySetupPage() {
                 <div className="p-2 rounded-xl transition-all duration-300">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                {/* <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   MAYSON
-                </span>
+                </span> */}
+                <Image
+    src="/maysonb-logo.png"
+    alt="Mayson Logo"
+    width={120} // adjust width as needed
+    height={40}
+    className="object-contain"
+  />
               </div>
               <p className="text-gray-400 leading-relaxed">
                 Premium home appliances with reliable warranty support and exceptional customer service.
