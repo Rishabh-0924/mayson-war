@@ -573,7 +573,7 @@ export default function WarrantySetupPage() {
   />
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Premium home appliances with reliable warranty support and exceptional customer service.
+                High Quality home appliances with reliable warranty support and exceptional customer service.
               </p>
             </div>
             <div>

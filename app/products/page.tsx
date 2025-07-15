@@ -45,7 +45,7 @@ export default function ProductsPage() {
       // rating: 4.6,
       // reviews: 892,
       category: "home-care",
-      badge: "Premium",
+      badge: "High Quality",
       badgeColor: "bg-blue-600",
       shortDesc: "Rechargeable lint remover with 5W motor and 60 minutes cordless operation time.",
       features: ["5W Motor 6500 RPM", "60 Min Battery Life", "3 Steel Blades", "Safety Features"],
@@ -433,7 +433,7 @@ export default function ProductsPage() {
               <div className="text-center mb-16">
                 <h3 className="text-4xl font-bold mb-6 text-gray-900">Why Choose MAYSON Products?</h3>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                  We're committed to providing premium quality products with exceptional warranty coverage and customer
+                  We're committed to providing high quality products with exceptional warranty coverage and customer
                   service.
                 </p>
               </div>
@@ -441,7 +441,7 @@ export default function ProductsPage() {
                 {[
                   {
                     icon: Award,
-                    title: "Premium Quality",
+                    title: "High Quality",
                     description: "High-quality materials and advanced technology in every product.",
                     bgColor: "bg-gray-100",
                     iconColor: "text-gray-700",
@@ -526,7 +526,7 @@ export default function ProductsPage() {
                 <span className="text-xl font-bold">MAYSON</span>
               </div>
               <p className="text-gray-400">
-                Premium home appliances with reliable warranty support and exceptional customer service.
+                High Quality home appliances with reliable warranty support and exceptional customer service.
               </p>
             </div>
             <div>

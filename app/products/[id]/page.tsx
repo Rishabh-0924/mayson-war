@@ -81,7 +81,7 @@ const productData = {
     brand: "Mayson",
     model: "LR-Green-2024",
     inStock: true,
-    badge: "Premium",
+    badge: "High Quality",
     badgeColor: "bg-blue-600",
     shortDesc: "Rechargeable lint remover with 5W motor and 60 minutes cordless operation time.",
     description:
@@ -307,7 +307,7 @@ export default function ProductDetailPage() {
               <div className="text-center p-8 bg-gray-50 rounded-2xl shadow-xl border border-gray-200 hover:scale-105 transition-transform duration-300 flex flex-col justify-center">
                 <Award className="h-12 w-12 mx-auto mb-4 text-gray-700" />
                 <p className="text-lg font-semibold text-gray-900">Quality Assured</p>
-                <p className="text-gray-600">Premium materials & craftsmanship</p>
+                <p className="text-gray-600">High Quality materials & craftsmanship</p>
               </div>
             </div>
 
@@ -478,7 +478,7 @@ export default function ProductDetailPage() {
                     </h3>
                     <div className="space-y-4">
                       {[
-                        "Premium build quality with attention to detail",
+                        "High build quality with attention to detail",
                         "Designed for long-lasting performance",
                         "Easy to use for all family members",
                         "Compact design saves space",
@@ -534,7 +534,7 @@ export default function ProductDetailPage() {
                 <span className="text-xl font-bold">MAYSON</span>
               </div>
               <p className="text-gray-400">
-                Premium home appliances with reliable warranty support and exceptional customer service.
+                High Quality home appliances with reliable warranty support and exceptional customer service.
               </p>
             </div>
             <div>

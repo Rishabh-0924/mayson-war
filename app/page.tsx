@@ -225,7 +225,7 @@ export default function HomePage() {
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-center text-gray-600">
                       <div className="w-2 h-2 bg-green-600 rounded-full mr-3 animate-pulse" />
-                      Enter Order ID or Phone Number
+                      Enter Order ID
                     </li>
                     <li className="flex items-center text-gray-600">
                       <div className="w-2 h-2 bg-green-600 rounded-full mr-3 animate-pulse" />
