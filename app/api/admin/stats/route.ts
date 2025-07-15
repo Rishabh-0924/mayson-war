@@ -7,7 +7,7 @@ import { requireAuth } from "@/lib/auth"
 export async function GET(request: NextRequest) {
   try {
     // Verify admin authentication
-    const user = requireAuth(request)
+    const user = await requireAuth(request)
     if (!user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
@@ -33,6 +33,7 @@ export async function GET(request: NextRequest) {
     })
   } catch (error) {
     console.error("Stats error:", error)
-    return NextResponse.json({ error: "Failed to fetch stats" }, { status: 500 })
+    return NextResponse.json({ error: String(error) }, { status: 500 })
+
   }
 }

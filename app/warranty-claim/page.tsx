@@ -143,7 +143,7 @@ export default function WarrantyClaimPage() {
         <div className="absolute bottom-32 left-1/4 w-26 h-26 bg-pink-50 rounded-full opacity-18"></div>
       </div>
 
-      <header className="bg-white shadow-sm">
+      <header className="sticky top-0 z-50 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2 text-gray-600 hover:text-gray-900">

@@ -103,7 +103,7 @@ export default function ProductsPage() {
       </div>
 
       {/* Header */}
-      <header className="bg-black shadow-2xl backdrop-blur-sm">
+      <header className="sticky top-0 z-50 bg-black shadow-2xl backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <Link

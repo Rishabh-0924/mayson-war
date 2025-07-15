@@ -39,8 +39,18 @@ export async function POST(request: NextRequest) {
       ...order,
       createdAt: new Date(),
     }))
+    console.log("Orders to insert:", JSON.stringify(dbOrders, null, 2))
 
-    const result = await collection.insertMany(dbOrders)
+    const validOrders = dbOrders.filter(order =>
+  order.orderId && order.customerName && order.phone && order.product
+)
+
+if (validOrders.length === 0) {
+  return NextResponse.json({ error: "No valid rows to upload" }, { status: 400 })
+}
+
+const result = await collection.insertMany(validOrders)
+
 
     return NextResponse.json({
       success: true,

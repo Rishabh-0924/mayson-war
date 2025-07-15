@@ -31,7 +31,10 @@ interface WarrantyData extends CustomerData {
 }
 
 export default function WarrantySetupPage() {
-  const [searchValue, setSearchValue] = useState("")
+  const [orderId, setOrderId] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+
   const [customerData, setCustomerData] = useState<CustomerData | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [warrantyActivated, setWarrantyActivated] = useState(false)
@@ -39,7 +42,7 @@ export default function WarrantySetupPage() {
   const [existingWarranty, setExistingWarranty] = useState<WarrantyData | null>(null)
 
   const handleSearch = async () => {
-    if (!searchValue.trim()) {
+    if (!orderId.trim()) {
       setError("Please enter an Order ID")
       return
     }
@@ -55,7 +58,12 @@ export default function WarrantySetupPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ orderId: searchValue.trim() }),
+        body: JSON.stringify({
+  orderId: orderId.trim(),
+  email: email.trim(),
+  phone: phone.trim(),
+}),
+
       })
 
       const data = await response.json()
@@ -89,7 +97,11 @@ export default function WarrantySetupPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ orderId: customerData.orderId }),
+        body: JSON.stringify({
+    orderId: customerData.orderId,
+    email: email,
+    phone: phone,
+  }),
       })
 
       const data = await response.json()
@@ -136,7 +148,7 @@ export default function WarrantySetupPage() {
         <div className="absolute bottom-32 left-1/4 w-26 h-26 bg-cyan-50 rounded-full opacity-18"></div>
       </div>
 
-      <header className="bg-white shadow-sm">
+      <header className="sticky top-0 z-50 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
@@ -193,19 +205,46 @@ export default function WarrantySetupPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="search">Order ID</Label>
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-                    <Input
-                      id="search"
-                      placeholder="Enter your Order ID (e.g., ORD001)"
-                      value={searchValue}
-                      onChange={(e) => setSearchValue(e.target.value)}
-                      className="pl-10 text-lg py-3"
-                    />
-                  </div>
-                </div>
+                <div className="space-y-4">
+  <div className="space-y-2">
+    <Label htmlFor="orderId">Order ID</Label>
+    <div className="relative">
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+      <Input
+        id="orderId"
+        placeholder="Enter your Order ID (e.g., ORD001)"
+        value={orderId}
+        onChange={(e) => setOrderId(e.target.value)}
+        className="pl-10 text-lg py-3"
+      />
+    </div>
+  </div>
+
+  <div className="space-y-2">
+    <Label htmlFor="email">Email Address</Label>
+    <Input
+      id="email"
+      type="email"
+      placeholder="Enter your Email Address"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      className="text-lg py-3"
+    />
+  </div>
+
+  <div className="space-y-2">
+    <Label htmlFor="phone">Phone Number</Label>
+    <Input
+      id="phone"
+      type="tel"
+      placeholder="Enter your Phone Number"
+      value={phone}
+      onChange={(e) => setPhone(e.target.value)}
+      className="text-lg py-3"
+    />
+  </div>
+</div>
+
 
                 {error && (
                   <Alert variant="destructive">
@@ -214,7 +253,7 @@ export default function WarrantySetupPage() {
                   </Alert>
                 )}
 
-                <Button onClick={handleSearch} disabled={!searchValue || isLoading} className="w-full py-3 text-lg">
+                <Button onClick={handleSearch} disabled={!orderId || !email || !phone || isLoading} className="w-full py-3 text-lg">
                   {isLoading ? "Searching..." : "Find My Order"}
                 </Button>
 
@@ -393,7 +432,9 @@ export default function WarrantySetupPage() {
                       onClick={() => {
                         setWarrantyActivated(false)
                         setCustomerData(null)
-                        setSearchValue("")
+                        setOrderId("")
+                        setEmail("")
+                        setPhone("")
                         setError("")
                       }}
                       className="flex-1 bg-transparent"

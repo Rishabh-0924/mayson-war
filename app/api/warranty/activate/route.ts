@@ -3,7 +3,8 @@ import { findOrderById, getWarrantyRecordsCollection } from "@/lib/database"
 
 export async function POST(request: NextRequest) {
   try {
-    const { orderId } = await request.json()
+    const { orderId, email, phone } = await request.json()
+
 
     if (!orderId) {
       return NextResponse.json({ error: "Order ID is required" }, { status: 400 })
@@ -23,8 +24,8 @@ export async function POST(request: NextRequest) {
     const warrantyRecord = {
       orderId: order.orderId,
       customerName: order.customerName,
-      email: order.email,
-      phone: order.phone,
+      email: email || order.email,
+phone: phone || order.phone,
       address: order.address,
       product: order.product,
       model: order.model,

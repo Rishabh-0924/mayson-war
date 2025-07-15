@@ -3,7 +3,7 @@ import { findWarrantyByOrderId, isWarrantyActive } from "@/lib/database"
 
 export async function POST(request: NextRequest) {
   try {
-    const { orderId } = await request.json()
+    const { orderId, phone } = await request.json()
 
     if (!orderId) {
       return NextResponse.json({ error: "Order ID is required" }, { status: 400 })
@@ -30,6 +30,7 @@ export async function POST(request: NextRequest) {
         expiryDate: warranty.expiryDate,
         status: warranty.status,
         isActive: true,
+        phoneUsedForSearch: phone,
       },
     })
   } catch (error) {

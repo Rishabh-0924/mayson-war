@@ -3,7 +3,8 @@ import { findOrderById, findWarrantyByOrderId } from "@/lib/database"
 
 export async function POST(request: NextRequest) {
   try {
-    const { orderId } = await request.json()
+    const { orderId, phone, email } = await request.json()
+
 
     if (!orderId) {
       return NextResponse.json({ error: "Order ID is required" }, { status: 400 })
@@ -20,24 +21,28 @@ export async function POST(request: NextRequest) {
     if (existingWarranty) {
       return NextResponse.json({
         order: {
-          orderId: order.orderId,
-          customerName: order.customerName,
-          email: order.email,
-          phone: order.phone,
-          address: order.address,
-          product: order.product,
-          model: order.model,
-          purchaseDate: order.purchaseDate,
-          orderValue: order.orderValue,
-        },
+  orderId: order.orderId,
+  customerName: order.customerName,
+  email: email || order.email,
+  phone: phone || order.phone,
+  address: order.address,
+  product: order.product,
+  model: order.model,
+  purchaseDate: order.purchaseDate,
+  orderValue: order.orderValue,
+}
+,
         warranty: {
-          orderId: existingWarranty.orderId,
-          customerName: existingWarranty.customerName,
-          product: existingWarranty.product,
-          activationDate: existingWarranty.activationDate,
-          expiryDate: existingWarranty.expiryDate,
-          status: existingWarranty.status,
-        },
+  orderId: existingWarranty.orderId,
+  customerName: existingWarranty.customerName,
+  email: existingWarranty.email,
+  phone: existingWarranty.phone,
+  product: existingWarranty.product,
+  activationDate: existingWarranty.activationDate,
+  expiryDate: existingWarranty.expiryDate,
+  status: existingWarranty.status,
+},
+
       })
     }
 
