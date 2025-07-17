@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer"
 
-export async function sendEmail(to: string, name: string, warranty: any) {
+export async function sendWarrantyActivationEmail(to: string, name: string, warranty: any) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -24,6 +24,36 @@ Your warranty has been successfully activated.
 🔹 Expiry Date: ${warranty.expiryDate}
 
 Thank you for choosing us!`,
+  }
+
+  await transporter.sendMail(mailOptions)
+}
+
+export async function sendClaimSubmissionEmail(to: string, name: string, claim: any) {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_ID,
+      pass: process.env.EMAIL_PASS,
+    },
+  })
+
+  const mailOptions = {
+    from: `"Warranty Team" <${process.env.EMAIL_ID}>`,
+    to,
+    subject: `Warranty Claim Received for Order ID: ${claim.orderId}`,
+    text: `Hello ${name},
+
+We have received your warranty claim.
+
+🔹 Order ID: ${claim.orderId}
+🔹 Claim ID: ${claim.claimId}
+🔹 Problem: ${claim.problemDescription}
+🔹 Submission Date: ${claim.submissionDate}
+
+Our team will reach out to you via email or phone within the next 48 hours.
+
+Thank you!`,
   }
 
   await transporter.sendMail(mailOptions)

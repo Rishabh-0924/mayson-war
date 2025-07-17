@@ -1,5 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { findWarrantyByOrderId, getClaimRecordsCollection, isWarrantyActive } from "@/lib/database"
+import { sendSMS } from "@/lib/sendSMS"
+import { sendClaimSubmissionEmail } from "@/lib/sendEmail"
+
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,6 +42,14 @@ export async function POST(request: NextRequest) {
 
     const collection = await getClaimRecordsCollection()
     await collection.insertOne(claimRecord)
+
+    if (warranty.email) {
+      await sendClaimSubmissionEmail(warranty.email, warranty.customerName, claimRecord)
+    }
+
+    if (warranty.phone) {
+      await sendSMS(warranty.phone, warranty.customerName, warranty.orderId, claimId)
+    }
 
     return NextResponse.json({
       success: true,
