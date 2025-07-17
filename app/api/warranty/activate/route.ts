@@ -1,5 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { findOrderById, getWarrantyRecordsCollection } from "@/lib/database"
+import { sendEmail } from "@/lib/sendEmail" // ✨ Import email sender
+
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,6 +40,12 @@ phone: phone || order.phone,
 
     const collection = await getWarrantyRecordsCollection()
     await collection.insertOne(warrantyRecord)
+
+    try {
+      await sendEmail(warrantyRecord.email, warrantyRecord.customerName, warrantyRecord)
+    } catch (err) {
+      console.error("Email sending failed:", err)
+    }
 
     return NextResponse.json({
       success: true,
