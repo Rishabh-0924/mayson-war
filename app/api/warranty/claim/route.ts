@@ -47,9 +47,9 @@ export async function POST(request: NextRequest) {
       await sendClaimSubmissionEmail(warranty.email, warranty.customerName, claimRecord)
     }
 
-    // if (warranty.phone) {
-    //   await sendSMS(warranty.phone, warranty.customerName, warranty.orderId, claimId)
-    // }
+    if (warranty.phone) {
+      await sendSMS(warranty.phone, warranty.customerName, warranty.orderId, claimId)
+    }
 
     return NextResponse.json({
       success: true,
