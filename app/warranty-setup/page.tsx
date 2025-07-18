@@ -197,7 +197,7 @@ export default function WarrantySetupPage() {
               // style={{ cursor: "pointer" }}
             >
               <div className="p-2 rounded-xl transition-all duration-300">
-                <Shield className="h-6 w-6 text-white" />
+                <Shield className="h-8 w-8 text-white" />
               </div>
               {/* <h1 className="text-2xl font-bold text-white">MAYSON</h1> */}
               <Image

@@ -6,11 +6,15 @@ import Link from "next/link"
 import { Shield, ArrowRight, FileText, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Header from "@/components/header"
+
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function HomePage() {
   const [scrollY, setScrollY] = useState(0)
+
+
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -85,56 +89,7 @@ export default function HomePage() {
         />
       </div>
 
-      {/* Header - Fixed and Black */}
-      <header className="bg-black shadow-sm fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-opacity-95">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 select-none" onClick={handleLogoClick}>
-              {/* <Shield className="h-8 w-8 text-white" /> */}
-              {/* <Image src="/mayson1-logo.png" alt="Mayson Logo" width={40} height={40} className="object-contain" /> */}
-
-              {/* <h1 className="text-2xl font-bold text-white">MAYSON</h1> */}
-
-              <Shield className="h-8 w-8 text-white" />
-  <Image
-    src="/maysonb-logo.png"
-    alt="Mayson Logo"
-    width={120} // adjust width as needed
-    height={40}
-    className="object-contain"
-  />
-            </div>
-            {/* <div className="flex items-center space-x-2 select-none" onClick={handleLogoClick}>
-  <Shield className="h-8 w-8 text-white" />
-  <Image
-    src="/mayson1-logo.png"
-    alt="Mayson Logo"
-    width={120} // adjust width as needed
-    height={40}
-    className="object-contain"
-  />
-</div> */}
-
-            <nav className="hidden md:flex space-x-8">
-              <a
-                href="/products"
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105"
-              >
-                Products
-              </a>
-              <a
-                href="#warranty"
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105"
-              >
-                Warranty
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">
-                Support
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Add padding to account for fixed header */}
       <div className="pt-20 relative z-10">
@@ -394,5 +349,7 @@ export default function HomePage() {
         </footer>
       </div>
     </div>
-  )
+  
+)
 }
+

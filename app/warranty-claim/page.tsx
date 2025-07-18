@@ -113,10 +113,7 @@ export default function WarrantyClaimPage() {
     }
   }
 
-  const handleLogoClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    window.location.href = "/admin"
-  }
+  
 
   const calculateDaysRemaining = () => {
     if (!warrantyData) return 0
@@ -146,7 +143,8 @@ export default function WarrantyClaimPage() {
         ></div>
       </div>
 
-      <header className="sticky top-0 z-50 bg-black shadow-lg border-b border-gray-800">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg border-b border-gray-800">
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link
@@ -159,11 +157,11 @@ export default function WarrantyClaimPage() {
 
             <div
               className="flex items-center space-x-3 select-none animate-fade-in group"
-              onClick={handleLogoClick}
-              style={{ cursor: "pointer" }}
+              // onClick={handleLogoClick}
+              // style={{ cursor: "pointer" }}
             >
-              <div className="p-2 border-2 border-white rounded-xl group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                <Shield className="h-6 w-6 text-white fill-none stroke-2" />
+              <div className=" rounded-xl group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <Shield className="h-8 w-8 text-white" />
               </div>
               <Image
     src="/maysonb-logo.png"
