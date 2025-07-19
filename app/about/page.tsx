@@ -354,7 +354,7 @@ export default function AboutUs() {
               isVisible["hero-title"] ? "animate-slide-in-up" : "opacity-0 translate-y-10"
             }`}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-6 tracking-tight animate-glow-pulse">
+            <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-6 tracking-tight ">
               About MAYSON
             </h1>
           </div>
@@ -366,12 +366,11 @@ export default function AboutUs() {
             }`}
           >
             <div className="relative inline-block group">
-              <div className="bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 rounded-full px-8 py-4 shadow-lg border border-blue-200 hover-lift">
+              <div className="bg-blue rounded-full px-8 py-4 shadow-lg border border-blue-200 hover-lift">
                 <p className="text-3xl text-blue-600 font-bold shimmer-effect animate-typewriter">
                   LIFE deserves better
                 </p>
               </div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full blur opacity-30 animate-pulse group-hover:opacity-50 transition-opacity duration-300"></div>
             </div>
           </div>
           <div
@@ -441,12 +440,11 @@ export default function AboutUs() {
               }`}
             >
               <div className="relative group">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-15 group-hover:opacity-25 transition-opacity duration-300"></div>
+                <div className="absolute -inset-4  rounded-2xl blur opacity-15 group-hover:opacity-25 transition-opacity duration-300"></div>
                 <div className="relative bg-white rounded-2xl p-8 h-96 flex items-center justify-center hover-lift border border-gray-200">
                   <div className="text-center">
                     <div className="relative">
                       <Home className="h-24 w-24 text-blue-600 mx-auto mb-4 animate-float animate-glow-pulse" />
-                      <div className="absolute inset-0 bg-blue-400 rounded-full blur-xl opacity-20 animate-pulse"></div>
                     </div>
                     <p className="text-xl font-bold text-blue-700 mb-2">Making homes happier,</p>
                     <p className="text-xl font-bold text-blue-700">one innovation at a time</p>
@@ -489,8 +487,8 @@ export default function AboutUs() {
               <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-green-50 hover-lift group relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="bg-gradient-to-br from-green-100 to-green-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 animate-pulse-glow">
-                    <Sparkles className="h-10 w-10 text-green-600 animate-pulse" />
+                  <div className="bg-gradient-to-br from-green-100 to-green-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300  -glow">
+                    <Sparkles className="h-10 w-10 text-green-600 " />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-800 mb-4 group-hover:text-green-600 transition-colors duration-300">
                     Innovation
@@ -512,8 +510,8 @@ export default function AboutUs() {
               <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-blue-50 hover-lift group relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="bg-gradient-to-br from-blue-100 to-blue-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 animate-pulse-glow">
-                    <Heart className="h-10 w-10 text-blue-600 animate-pulse" />
+                  <div className="bg-gradient-to-br from-blue-100 to-blue-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 ">
+                    <Heart className="h-10 w-10 text-blue-600 " />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">
                     Care
@@ -535,8 +533,8 @@ export default function AboutUs() {
               <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-purple-50 hover-lift group relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="bg-gradient-to-br from-purple-100 to-purple-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 animate-pulse-glow">
-                    <Award className="h-10 w-10 text-purple-600 animate-pulse" />
+                  <div className="bg-gradient-to-br from-purple-100 to-purple-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 ">
+                    <Award className="h-10 w-10 text-purple-600 " />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-800 mb-4 group-hover:text-purple-600 transition-colors duration-300">
                     Excellence
@@ -605,11 +603,11 @@ export default function AboutUs() {
             }`}
           >
             <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-15 group-hover:opacity-25 transition-opacity duration-300"></div>
-              <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-12 text-center hover-lift border border-blue-100">
+              <div className="absolute -inset-4  rounded-3xl blur opacity-15 group-hover:opacity-25 transition-opacity duration-300"></div>
+              <div className="relative bg-white rounded-3xl p-12 text-center hover-lift border border-blue-100">
                 <div className="relative">
-                  <Users className="h-20 w-20 text-blue-600 mx-auto mb-8 animate-float animate-glow-pulse" />
-                  <div className="absolute inset-0 bg-blue-400 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+                  <Users className="h-20 w-20 text-blue-600 mx-auto mb-8 animate-float " />
+                  <div className="absolute inset-0 rounded-full blur-2xl opacity-20 "></div>
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Built by Dreamers, For Dreamers</h3>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
