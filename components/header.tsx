@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { Menu, X, Shield } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,10 +29,31 @@ export default function Header() {
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            <a href="/products" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Products</a>
-            <a href="#warranty" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Warranty</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Support</a>
-          </nav>
+  <Link
+    href="/products"
+    className="relative text-gray-300 hover:text-white transition-all duration-300 group font-medium"
+  >
+    Products
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+
+  <Link
+    href="/"
+    className="relative text-blue-300 hover:text-white transition-all duration-300 group"
+  >
+    Warranty
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+
+  <Link
+    href="/about"
+    className="relative text-gray-300 hover:text-white transition-all duration-300 group"
+  >
+    About Us
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+</nav>
+
 
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
@@ -43,7 +66,7 @@ export default function Header() {
           <div className="md:hidden mt-2 space-y-2 px-2 pb-2">
             <a href="/products" className="block text-gray-300 hover:text-white transition-all duration-300">Products</a>
             <a href="#warranty" className="block text-gray-300 hover:text-white transition-all duration-300">Warranty</a>
-            <a href="#" className="block text-gray-300 hover:text-white transition-all duration-300">Support</a>
+            <a href="/about" className="block text-gray-300 hover:text-white transition-all duration-300">About Us</a>
           </div>
         )}
       </div>

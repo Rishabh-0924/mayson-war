@@ -128,19 +128,31 @@ export default function ProductsPage() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              <Link
-                href="/products"
-                className="text-blue-300 hover:text-white transition-all duration-300 hover:scale-105 font-medium"
-              >
-                Products
-              </Link>
-              <Link href="/" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">
-                Warranty
-              </Link>
-              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">
-                Support
-              </a>
-            </nav>
+  <Link
+    href="/products"
+    className="relative text-blue-300 hover:text-white transition-all duration-300 group font-medium"
+  >
+    Products
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+
+  <Link
+    href="/"
+    className="relative text-gray-300 hover:text-white transition-all duration-300 group"
+  >
+    Warranty
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+
+  <Link
+    href="/about"
+    className="relative text-gray-300 hover:text-white transition-all duration-300 group"
+  >
+    About Us
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+</nav>
+
 
             {/* Mobile Menu Button */}
             <button
@@ -174,11 +186,11 @@ export default function ProductsPage() {
                 Warranty
               </Link>
               <a
-                href="#"
+                href="/about"
                 className="block px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Support
+                About Us
               </a>
             </nav>
           </div>
