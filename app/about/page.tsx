@@ -355,7 +355,7 @@ export default function AboutUs() {
             }`}
           >
             <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-6 tracking-tight ">
-              About MAYSON
+              MAYSON
             </h1>
           </div>
           <div
@@ -368,7 +368,7 @@ export default function AboutUs() {
             <div className="relative inline-block group">
               <div className="bg-blue rounded-full px-8 py-4 shadow-lg border border-blue-200 hover-lift">
                 <p className="text-3xl text-blue-600 font-bold shimmer-effect animate-typewriter">
-                  LIFE deserves better
+                  LIFE deserves BETTER
                 </p>
               </div>
             </div>
