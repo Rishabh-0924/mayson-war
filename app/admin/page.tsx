@@ -195,9 +195,6 @@ export default function AdminPage() {
             expectedColumns={[
               "Order ID",
               "Customer Name",
-              "Email",
-              "Phone",
-              "Address",
               "Product Name",
               "Product Model",
               "Purchase Date",
