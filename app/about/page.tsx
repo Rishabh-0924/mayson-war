@@ -260,7 +260,7 @@ export default function AboutUs() {
               <ArrowLeft className="h-6 w-6 group-hover:-translate-x-1 transition-transform duration-300" />
             </Link>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 translate-x-20">
               <Shield className="h-8 w-8 text-blue-400" />
               {/* <div className="text-white text-xl font-bold">MAYSON</div> */}
               <Image
@@ -354,7 +354,7 @@ export default function AboutUs() {
               isVisible["hero-title"] ? "animate-slide-in-up" : "opacity-0 translate-y-10"
             }`}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-6 tracking-tight ">
+            <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-1 tracking-tight ">
               MAYSON
             </h1>
           </div>
@@ -366,11 +366,11 @@ export default function AboutUs() {
             }`}
           >
             <div className="relative inline-block group">
-              <div className="bg-blue rounded-full px-8 py-4 shadow-lg border border-blue-200 hover-lift">
-                <p className="text-3xl text-blue-600 font-bold shimmer-effect animate-typewriter">
+              {/* <div className="bg-blue rounded-full px-8 py-4 shadow-lg border border-blue-200 hover-lift"> */}
+                <p className="text-2xl text-blue-500 font-bold p-7">
                   LIFE deserves BETTER
                 </p>
-              </div>
+              {/* </div> */}
             </div>
           </div>
           <div
@@ -381,8 +381,8 @@ export default function AboutUs() {
             }`}
           >
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto hover:text-gray-800 transition-colors duration-300">
-              At MAYSON, we believe that every moment of your life should be filled with ease, comfort, and joy. We're
-              dedicated to creating innovative solutions that transform your daily routines into effortless experiences.
+               At MAYSON—because life deserves better—we were born from one simple truth: quality should never be a gamble. Fed up with delicate, low-grade goods that promise much but deliver little, we set out to restore trust between Maker and buyer.
+
             </p>
           </div>
         </div>
@@ -410,24 +410,21 @@ export default function AboutUs() {
                 <div className="hover-lift p-6 rounded-xl bg-white border-l-4 border-blue-500 group shadow-md">
                   <div className="absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-xl"></div>
                   <p className="text-lg relative z-10">
-                    MAYSON was born from a simple yet powerful belief: life is too precious to be spent on tedious
-                    tasks. Our founders, passionate about creating meaningful change in everyday living, set out to
-                    design products that would give people back their most valuable asset—time.
+                   Why must every decent tool feel like a roll of the dice?”
+ Our frustration lit a fire. We vowed never to let customers feel fooled again—and MAYSON was born.
+
                   </p>
                 </div>
                 <div className="hover-lift p-6 rounded-xl bg-white border-l-4 border-green-500 group shadow-md">
                   <div className="absolute inset-0 bg-cyan-50 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-xl"></div>
                   <p className="text-lg relative z-10">
-                    We started with a vision to revolutionize home care, making it simpler, more efficient, and
-                    surprisingly enjoyable. Every product we create is a testament to our commitment to quality,
-                    innovation, and the belief that life deserves better.
+                    At MAYSON, you’re more than a sale—you’re family. We stand by our products with straightforward warranties and real people on the line. Your insights drive our evolution, ensuring we never stray from our founding promise.
                   </p>
                 </div>
                 <div className="hover-lift p-6 rounded-xl bg-white border-l-4 border-purple-500 group shadow-md">
                   <div className="absolute inset-0 bg-sky-50 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-xl"></div>
                   <p className="text-lg relative z-10">
-                    Today, MAYSON stands as a beacon of excellence in home care solutions, trusted by families worldwide
-                    who refuse to settle for ordinary.
+                    We believe “premium” isn’t just a label; it’s a commitment. Every component is hand-picked for durability. Every assembly line is audited for precision. And every unit endures rigorous stress tests—because trust is earned, not declared.
                   </p>
                 </div>
               </div>
@@ -452,6 +449,9 @@ export default function AboutUs() {
                       <Star className="h-6 w-6 text-blue-600 animate-bounce" style={{ animationDelay: "0s" }} />
                       <Star className="h-6 w-6 text-blue-600 animate-bounce" style={{ animationDelay: "0.2s" }} />
                       <Star className="h-6 w-6 text-blue-600 animate-bounce" style={{ animationDelay: "0.4s" }} />
+                      <Star className="h-6 w-6 text-blue-600 animate-bounce" style={{ animationDelay: "0.6s" }} />
+                      <Star className="h-6 w-6 text-blue-600 animate-bounce" style={{ animationDelay: "0.8s" }} />
+
                     </div>
                   </div>
                 </div>
@@ -491,12 +491,10 @@ export default function AboutUs() {
                     <Sparkles className="h-10 w-10 text-green-600 " />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-800 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                    Innovation
+                    Honesty
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    We constantly push boundaries to create solutions that didn't exist before, turning everyday
-                    challenges into opportunities for breakthrough innovation.
-                  </p>
+We do right by you, create products that last instead of relying on constant repairs, and listen—because your frustrations drive our innovation.                  </p>
                 </div>
               </div>
             </div>
@@ -564,9 +562,7 @@ export default function AboutUs() {
           >
             <h2 className="text-5xl font-bold mb-8 text-white animate-glow-pulse">Our Mission</h2>
             <p className="text-xl leading-relaxed mb-12 text-white/90">
-              To empower people to live their best lives by creating innovative home care solutions that eliminate the
-              mundane and amplify the meaningful. We're not just making products—we're crafting experiences that give
-              you more time for what truly matters.
+              Our mission at MAYSON is to empower every home with thoughtfully curated essentials defined by uncompromising quality, radical transparency, and customer-centric simplicity—so that each purchase becomes a confident choice and every product stands the test of time.
             </p>
             <div className="glass-effect rounded-3xl p-8 inline-block hover-lift group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -592,7 +588,7 @@ export default function AboutUs() {
               isVisible["team-header"] ? "animate-slide-in-up" : "opacity-0 translate-y-10"
             }`}
           >
-            <h2 className="text-5xl font-bold text-gray-900 mb-4 text-gradient">The MAYSON Family</h2>
+            <h2 className="text-5xl font-bold text-gray-900 mb-4 text-gradient">Dear MAYSON Family,</h2>
             <p className="text-xl text-gray-600">A passionate team united by the vision that life deserves better</p>
           </div>
           <div
@@ -611,9 +607,7 @@ export default function AboutUs() {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Built by Dreamers, For Dreamers</h3>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                  Our diverse team of designers, engineers, and innovators share a common passion: creating products
-                  that make a real difference in people's lives. We're not just colleagues—we're a family committed to
-                  the belief that exceptional products come from exceptional care.
+                  United by our passion for honest quality and simplicity, we stand together—our team crafting with care and our customers inspiring every step—to transform daily routines into moments of confidence and delight. Thank you for being the heart of our journey.
                 </p>
               </div>
             </div>
