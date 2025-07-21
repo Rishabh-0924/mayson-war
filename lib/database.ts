@@ -28,9 +28,6 @@ export interface CustomerOrder {
   _id?: string
   orderId: string
   customerName: string
-  email: string
-  phone: string
-  address: string
   product: string
   model: string
   purchaseDate: string
@@ -44,7 +41,6 @@ export interface WarrantyRecord {
   customerName: string
   email: string
   phone: string
-  address: string
   product: string
   model: string
   purchaseDate: string

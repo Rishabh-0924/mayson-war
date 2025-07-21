@@ -7,7 +7,6 @@ export interface ExcelOrderData {
   customerName: string
   email: string
   phone: string
-  address: string
   product: string
   model: string
   purchaseDate: string
@@ -36,7 +35,6 @@ export function parseExcelFile(buffer: Buffer): ExcelOrderData[] {
 
       const order: any = {}
 
-      // Map headers to expected fields
       headers.forEach((header, index) => {
         const value = row[index]
         if (value === undefined || value === null) return
@@ -49,16 +47,12 @@ export function parseExcelFile(buffer: Buffer): ExcelOrderData[] {
           order.email = String(value).trim()
         } else if (header.includes("phone")) {
           order.phone = String(value).trim()
-        } else if (header.includes("address")) {
-          order.address = String(value).trim()
         } else if (header.includes("product") && header.includes("name")) {
           order.product = String(value).trim()
         } else if (header.includes("product") && header.includes("model")) {
           order.model = String(value).trim()
         } else if (header.includes("purchase") && header.includes("date")) {
-          // Handle date formatting
           if (typeof value === "number") {
-            // Excel date serial number
             const date = XLSX.SSF.parse_date_code(value)
             order.purchaseDate = `${date.y}-${String(date.m).padStart(2, "0")}-${String(date.d).padStart(2, "0")}`
           } else {
@@ -69,14 +63,12 @@ export function parseExcelFile(buffer: Buffer): ExcelOrderData[] {
         }
       })
 
-      // Validate required fields
-      if (order.orderId && order.customerName && order.phone && order.product) {
+      if (order.orderId && order.customerName && order.product) {
         orders.push({
           orderId: order.orderId,
           customerName: order.customerName,
           email: order.email || "",
-          phone: order.phone,
-          address: order.address || "",
+          phone: order.phone || " ",
           product: order.product,
           model: order.model || "",
           purchaseDate: order.purchaseDate || "",
