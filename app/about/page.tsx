@@ -354,7 +354,7 @@ export default function AboutUs() {
               isVisible["hero-title"] ? "animate-slide-in-up" : "opacity-0 translate-y-10"
             }`}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-1 tracking-tight ">
+            <h1 className="text-5xl text-black md:text-7xl font-bold mb-1 tracking-tight ">
               MAYSON
             </h1>
           </div>
@@ -367,9 +367,7 @@ export default function AboutUs() {
           >
             <div className="relative inline-block group">
               {/* <div className="bg-blue rounded-full px-8 py-4 shadow-lg border border-blue-200 hover-lift"> */}
-                <p className="text-2xl text-blue-500 font-bold p-7">
-                  LIFE deserves BETTER
-                </p>
+                
               {/* </div> */}
             </div>
           </div>
@@ -380,7 +378,7 @@ export default function AboutUs() {
               isVisible["hero-description"] ? "animate-slide-in-up" : "opacity-0 translate-y-10"
             }`}
           >
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto hover:text-gray-800 transition-colors duration-300">
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto hover:text-gray-800 transition-colors duration-300 p-8">
                At MAYSON—because life deserves better—we were born from one simple truth: quality should never be a gamble. Fed up with delicate, low-grade goods that promise much but deliver little, we set out to restore trust between Maker and buyer.
 
             </p>
