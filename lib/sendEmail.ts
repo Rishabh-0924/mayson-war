@@ -1,3 +1,9 @@
+export const runtime = "nodejs"
+
+import { NextRequest, NextResponse } from "next/server"
+// rest of your code
+
+
 import nodemailer from "nodemailer"
 
 export async function sendWarrantyActivationEmail(to: string, name: string, warranty: any) {

@@ -1,5 +1,8 @@
+export const runtime = "nodejs"
+
 import { NextResponse } from "next/server"
 import { getWarrantyRecordsCollection } from "@/lib/database"
+import { sendWarrantyExtensionEmail } from "@/lib/sendEmail" // Make sure you export this in sendmail.ts
 
 export async function POST(req: Request) {
   try {
@@ -18,14 +21,27 @@ export async function POST(req: Request) {
     const currentExpiry = new Date(record.expiryDate)
     currentExpiry.setMonth(currentExpiry.getMonth() + parseInt(monthsToAdd))
 
+    const newExpiry = currentExpiry.toISOString().split("T")[0]
+
     await collection.updateOne(
       { orderId },
-      { $set: { expiryDate: currentExpiry.toISOString().split("T")[0] } }
+      { $set: { expiryDate: newExpiry } }
     )
+
+    // Send email after update
+    await sendWarrantyExtensionEmail(
+  record.email,
+  record.customerName,
+  record.orderId,
+  record.product,
+  record.model,
+  newExpiry
+)
+
 
     return NextResponse.json({
       success: true,
-      newExpiryDate: currentExpiry,
+      newExpiry,
     })
   } catch (err) {
     console.error("Error updating warranty:", err)
