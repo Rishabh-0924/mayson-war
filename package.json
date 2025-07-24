@@ -63,6 +63,7 @@
     "react-dom": "^18",
     "react-hook-form": "latest",
     "react-resizable-panels": "latest",
+    "react-select": "^5.10.2",
     "recharts": "latest",
     "snappy": "latest",
     "socks": "latest",

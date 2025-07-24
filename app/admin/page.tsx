@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Shield, Users, FileText, Download, LogOut } from "lucide-react"
+import Select from "react-select"
+
+
 
 interface AdminStats {
   totalOrders: number
@@ -24,6 +27,50 @@ export default function AdminPage() {
     totalClaims: 0,
     activeWarranties: 0,
   })
+  const [orderId, setOrderId] = useState("")
+const [monthsToAdd, setMonthsToAdd] = useState("")
+const [updateMessage, setUpdateMessage] = useState("")
+const [orderOptions, setOrderOptions] = useState<{ value: string; label: string }[]>([])
+
+useEffect(() => {
+  const fetchOrderIds = async () => {
+    const res = await fetch("/api/admin/get-order-ids")
+    const data = await res.json()
+    if (data.orderIds) {
+      setOrderOptions(data.orderIds.map((id: string) => ({ value: id, label: id })))
+    }
+  }
+
+  fetchOrderIds()
+}, [])
+
+
+
+  const handleUpdateWarranty = async () => {
+    try {
+      const res = await fetch("/api/admin/update-warranty", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          orderId,
+          monthsToAdd: parseInt(monthsToAdd),
+        }),
+      })
+
+      const data = await res.json()
+      if (res.ok) {
+        setUpdateMessage(`✅ Warranty updated. New expiry: ${new Date(data.newExpiryDate).toLocaleDateString()}`)
+      } else {
+        setUpdateMessage(`❌ ${data.error}`)
+      }
+    } catch (error) {
+      console.error("Warranty update error:", error)
+      setUpdateMessage("❌ Something went wrong")
+    }
+  }
+
 
   useEffect(() => {
     const token = localStorage.getItem("adminToken")
@@ -223,7 +270,37 @@ export default function AdminPage() {
             </CardContent>
           </Card>
         </div>
+        {/* Update Warranty Duration */}
+<div className="mt-12 max-w-xl mx-auto bg-white p-6 rounded shadow">
+  <h2 className="text-xl font-bold mb-4">🔧 Update Warranty Duration</h2>
+  <div className="flex flex-col gap-3">
+    <div className="mb-2">
+  <label className="block text-sm font-medium mb-1">Order ID</label>
+  <Select
+    options={orderOptions}
+    onChange={(selected) => setOrderId(selected?.value || "")}
+    placeholder="Search or select order ID"
+    isClearable
+  />
+</div>
+
+    <input
+      type="number"
+      value={monthsToAdd}
+      onChange={(e) => setMonthsToAdd(e.target.value)}
+      placeholder="Months to Add (e.g. 3)"
+      className="border p-2 rounded"
+    />
+    <Button onClick={handleUpdateWarranty} className="w-full mt-2">
+      Update Warranty
+    </Button>
+    {updateMessage && <p className="text-sm mt-2 text-center">{updateMessage}</p>}
+  </div>
+</div>
+
       </div>
     </div>
   )
 }
+
+
