@@ -61,7 +61,11 @@ useEffect(() => {
 
       const data = await res.json()
       if (res.ok) {
-        setUpdateMessage(`✅ Warranty updated. New expiry: ${new Date(data.newExpiryDate).toLocaleDateString()}`)
+              console.log("Raw expiry from API:", data.newExpiry) // 🔍 Debug line
+
+const expiry = new Date(data.newExpiry)
+const formattedDate = isNaN(expiry.getTime()) ? "Invalid Date" : expiry.toLocaleDateString("en-IN")
+setUpdateMessage(`✅ Warranty updated. New expiry: ${formattedDate}`)
       } else {
         setUpdateMessage(`❌ ${data.error}`)
       }

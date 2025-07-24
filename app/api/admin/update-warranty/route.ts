@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     const currentExpiry = new Date(record.expiryDate)
     currentExpiry.setMonth(currentExpiry.getMonth() + parseInt(monthsToAdd))
 
-    const newExpiry = currentExpiry.toISOString().split("T")[0]
+    const newExpiry = currentExpiry.toISOString()
 
     await collection.updateOne(
       { orderId },
