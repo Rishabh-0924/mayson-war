@@ -21,7 +21,13 @@ export async function POST(req: Request) {
     const currentExpiry = new Date(record.expiryDate)
     currentExpiry.setMonth(currentExpiry.getMonth() + parseInt(monthsToAdd))
 
-    const newExpiry = currentExpiry.toISOString()
+    const newExpiry = currentExpiry.toLocaleDateString("en-IN", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+})
+// "24 October 2025"
+
 
     await collection.updateOne(
       { orderId },
