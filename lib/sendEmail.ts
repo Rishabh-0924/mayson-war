@@ -58,3 +58,39 @@ Thank you!`,
 
   await transporter.sendMail(mailOptions)
 }
+
+
+export async function sendWarrantyExtensionEmail(
+  to: string,
+  name: string,
+  orderId: string,
+  product: string,
+  model: string,
+  newExpiryDate: string
+) {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_ID,
+      pass: process.env.EMAIL_PASS,
+    },
+  })
+
+  const mailOptions = {
+    from: `"Warranty Team" <${process.env.EMAIL_ID}>`,
+    to,
+    subject: `Warranty Extended for Order ID: ${orderId}`,
+    text: `Hello ${name},
+
+Good news! Your warranty has been extended.
+
+🔹 Product: ${product}
+🔹 Model: ${model}
+🔹 Order ID: ${orderId}
+🔹 New Expiry Date: ${newExpiryDate}
+
+Thank you for staying with us!`,
+  }
+
+  await transporter.sendMail(mailOptions)
+}
