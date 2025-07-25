@@ -27,8 +27,8 @@ import { useInView } from "framer-motion"
 const productData = {
   "vacuum-sealer": {
     name: "3-in-1 Vacuum Sealer",
-    price: "$89.99",
-    originalPrice: "$119.99",
+    price: "₹1499",
+    originalPrice: "₹2999",
     images: [
       "/placeholder.svg?height=500&width=700",
       "/placeholder.svg?height=500&width=700",
