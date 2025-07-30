@@ -25,9 +25,9 @@ export default function ProductsPage() {
     {
       id: "vacuum-sealer",
       name: "3-in-1 Vacuum Sealer",
-      price: "$89.99",
-      originalPrice: "$119.99",
-      image: "/placeholder.svg?height=300&width=400",
+      price: "₹1499",
+      originalPrice: "₹2999",
+      image: "/1.jpg?height=300&width=400",
       rating: 4.5,
       reviews: 1247,
       category: "kitchen",
