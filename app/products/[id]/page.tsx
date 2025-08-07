@@ -31,6 +31,7 @@ const productData = {
     originalPrice: "₹2999",
     images: [
       "/2.jpg?height=500&width=700",
+      "/7.jpg?height=500&width=700",
       "/3.jpg?height=500&width=700",
       "/4.jpg?height=500&width=700",
       "/7.jpg?height=500&width=700",
@@ -376,6 +377,25 @@ export default function ProductDetailPage() {
 
                 <p className="text-xl text-gray-600 leading-relaxed">{product.description}</p>
               </div>
+
+              {/* Buy Now Button */}
+{/* Buy Now Button */}
+<div className="mt-6">
+  <a
+    href="https://www.amazon.in/dp/B0FHWF2XDC"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button
+      className="w-full sm:w-auto px-10 py-4 text-lg font-semibold text-black bg-yellow-400 hover:bg-yellow-500 rounded-xl shadow-xl transition-transform transform hover:scale-105 focus:outline-none animate-bounce"
+    >
+      🛒 Buy Now
+    </button>
+  </a>
+</div>
+
+
+
 
               {/* Product Info Card */}
               <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl p-8 border border-blue-100">
